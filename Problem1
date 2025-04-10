@@ -1,0 +1,75 @@
+Problem Statement - 1 : Container Image Vulnerability Scanner
+
+Overview: Listing out product requirements for testing container image vulnerabilities.
+
+What's important?
+	• Search for the most critical vulnerabilities across thousands of images.
+	•	Prioritize images based on severity and impact.
+	•	Provide the next steps and actionable insights for fixes.
+	•	Also, provide a dashboard with a good UI for large-scale container environments.
+
+Features to include
+  • Image Scanner Table	: Lists all container images with metadata.
+  • Severity Filter :	Filter by Critical, High, Low vulnerabilities
+  • Search & Sort :	Search by image name and also sort by most critical.
+  • Summary	For each critical vulnerablilty, provide fix paths.
+
+
+=================================================================================================================================================
+
+
+  WireFrame:
+
+Screen 1: Dashboard
+  +-------------------------------------------------------+
+| [Search Container Images...]                           |
++-----------+-------------------------------------------+
+| Filters   | Image Name  | Vulns | Severity | Last     |
+|           |             |       |          | Scanned  |
++-----------+-------------+-------+----------+----------+
+| [x] Critical  | image-1  | 12    | [RED]    | 04/10/25 |
+| [x] High      | image-2  | 5     | [YELLOW] | 04/09/25 |
+| [x] Medium    | image-3  | 2     | [GREEN]  | 04/08/25 |
+| [x] Low       |           |       |          |          |
+|           |           |       |          |          |
+| Repositories: |           |       |          |          |
+| [ ] repo-a    |           |       |          |          |
+| [ ] repo-b    |           |       |          |          |
+|           |           |       |          |          |
+| Last Scanned: |           |       |          |          |
+| [ 04/01/25 ▼] |           |       |          |          |
+| [to 04/10/25 ▼] |           |       |          |          |
++-----------+-------------+-------+----------+----------+
+|           | [Fix Now] [View Details] |          |
++-----------+-------------------------------------------+
+
+
+Screen 2: Details
+
++-------------------------------------------------------+
+| Container Image: image-1 (repo-a)                     |
+| Created: 02/15/25                                     |
++-------------------------------------------------------+
+| CVE ID      | Severity | Description       | Fix?     |
++-------------+----------+-------------------+----------+
+| CVE-2023-123 | Critical | Buffer overflow.. | [Yes]    |
+| CVE-2023-456 | High     | TLS vuln...       | [No]     |
+| CVE-2023-789 | Medium   | Permission...     | [Yes]    |
++-------------+----------+-------------------+----------+
+| [Back] [Export Report] [Remediate All]                |
++-------------------------------------------------------+
+
+
+=================================================================================================================================================
+
+
+
+Here are some ideas that I might pitch to the dev team:
+1) We could try implementing an ML feature to accurately predict the vulnerability level.
+2) Auto-scan feature for regular scanning and updates
+3) Pop ups for every new detected threat
+
+
+=================================================================================================================================================
+
+Note: Since, I'm still learning more about cyber security, I have included details by referring other sources that include LLM's.
