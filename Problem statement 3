@@ -1,0 +1,28 @@
+Problem Statement 3 Output:
+
+Deployment
+$ kubectl apply -f datetime-deployment.yaml
+deployment.apps/datetime-app created
+
+$ kubectl apply -f datetime-service.yaml
+service/datetime-service created
+
+Pod Status
+$ kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+datetime-app-79b57b7d77-knlqg   1/1     Running   0          1m
+
+Service info
+$ kubectl get svc
+NAME               TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+datetime-service   NodePort   10.99.31.21     <none>        80:30036/TCP   1m
+kubernetes         ClusterIP  10.96.0.1       <none>        443/TCP        1d
+
+output:
+
+⚠️ Note:
+This app was deployed and tested in a Kubernetes environment using NodePort (30036).
+As Play With K8s has temporary sessions and limited public exposure, external access may not persist.
+
+For demonstration purposes, here's the sample output you would see when accessing the service:
+Current Server Time: 2025-04-11T16:42:23Z
